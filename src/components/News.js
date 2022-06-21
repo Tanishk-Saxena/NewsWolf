@@ -12,11 +12,9 @@ const News = (props) => {
     const [totalResults, setTotalResults] = useState(0);
     // const [totalPages, setTotalPages] = useState(0);
 
-    // document.title = props.title==="NewsMonkey - Get your daily dose of news for free!"?props.title: props.title + "- NewsMonkey";
-
     const fetchMoreData = async () => {
-        await setPage(page+1);
-        const url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+        const url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+        setPage(page+1);
         let data=await fetch(url);
         let parsedData=await data.json();
         setArticles(articles.concat(parsedData.articles));
@@ -25,7 +23,8 @@ const News = (props) => {
     };
 
     useEffect(() => {
-      componentDidMount();
+        document.title = props.title==="NewsMonkey - Get your daily dose of news for free!"?props.title: props.title + "- NewsMonkey";
+        componentDidMount();
     }, [])
     
     const componentDidMount = async () => {
@@ -40,7 +39,6 @@ const News = (props) => {
         setLoading(false);
         // setTotalPages(Math.ceil(parsedData.totalResults/props.pageSize));
         props.setProgress(100);
-        setPage(page+1);
     }
 
     // const handleNextClick = async () => {
@@ -56,7 +54,7 @@ const News = (props) => {
     return (
         <>  
             
-            <h1 className="text-center" style={{margin: "35px 0px 0px"}}>{props.title==="NewsMonkey - Get your daily dose of news for free!"?"NewsMonkey - Top Headlines":`Top ${props.title} Headlines`}</h1>
+            <h1 className="text-center" style={{margin: "80px 0px 0px"}}>{props.title==="NewsMonkey - Get your daily dose of news for free!"?"NewsMonkey - Top Headlines":`Top ${props.title} Headlines`}</h1>
 
             <InfiniteScroll
                 dataLength={articles.length}

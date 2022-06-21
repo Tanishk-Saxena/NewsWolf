@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
 import {
@@ -12,7 +12,7 @@ import LoadingBar from 'react-top-loading-bar'
 const App = () => {
   
   const pageSize=9;
-  const apiKey=process.env.REACT_APP_NEWS_API;
+  const apiKey=process.env.REACT_APP_NEWS_API2;
   const [progress, setProgress] = useState(0)
 
   return (
