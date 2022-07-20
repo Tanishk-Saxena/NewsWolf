@@ -25,6 +25,7 @@ const News = (props) => {
     useEffect(() => {
         document.title = props.title==="NewsMonkey - Get your daily dose of news for free!"?props.title: props.title + "- NewsMonkey";
         componentDidMount();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     const componentDidMount = async () => {
