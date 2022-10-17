@@ -23,7 +23,7 @@ const News = (props) => {
     };
 
     useEffect(() => {
-        document.title = props.title==="NewsMonkey - Get your daily dose of news for free!"?props.title: props.title + "- NewsMonkey";
+        document.title = props.title==="NewsWolf - Get your daily dose of news for free!"?props.title: props.title + "- NewsWolf";
         componentDidMount();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -55,7 +55,7 @@ const News = (props) => {
     return (
         <>  
             
-            <h1 className="text-center" style={{margin: "80px 0px 0px"}}>{props.title==="NewsMonkey - Get your daily dose of news for free!"?"NewsMonkey - Top Headlines":`Top ${props.title} Headlines`}</h1>
+            <h1 className="text-center" style={{margin: "80px 0px 0px", position: "relative"}}>{props.title==="NewsWolf - Get your daily dose of news for free!"?"NewsWolf - Top Headlines":`Top ${props.title} Headlines`}</h1>
 
             <InfiniteScroll
                 dataLength={articles.length}

@@ -26,7 +26,7 @@ const App = () => {
         // onLoaderFinished={() => setProgress(0)}
       />
       <Switch>
-        <Route exact path="/" element={<News apiKey={apiKey} setProgress={setProgress} key="/" pageSize={pageSize} country="in" title="NewsMonkey - Get your daily dose of news for free!"/>} />
+        <Route exact path="/" element={<News apiKey={apiKey} setProgress={setProgress} key="/" pageSize={pageSize} country="in" title="NewsWolf - Get your daily dose of news for free!"/>} />
         <Route exact path="/business" element={<News apiKey={apiKey} setProgress={setProgress} key="business" pageSize={pageSize} country="in" title="Business" category="business"/>} />
         <Route exact path="/entertainment" element={<News apiKey={apiKey} setProgress={setProgress} key="entertainment" pageSize={pageSize} country="in" title="Entertainment" category="entertainment"/>} />
         <Route exact path="/general" element={<News apiKey={apiKey} setProgress={setProgress} key="general" pageSize={pageSize} country="in" title="General" category="general"/>} />
